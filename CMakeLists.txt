@@ -4,4 +4,5 @@ project(din)
 
 add_executable(din 
 src/main.cpp
-src/app/app.cpp)
+src/app/app.cpp
+src/equals/equals.cpp)

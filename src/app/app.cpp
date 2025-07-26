@@ -1,8 +1,15 @@
+// implementation header
 #include "../../include/app/app.hpp"
 
+// libraries header
 #include <iostream>
 #include <string>
 #include <memory>
+#include "../../include/equals/equals.hpp"
+
+// namespaces
+using namespace din::equals;
+
 
 /**
  * @brief App::run method
@@ -29,5 +36,11 @@ void App::run() {
 
     std::cout << "↳ 〔 ❖ License ❖ 〕: ";
     std::getline(std::cin, *license);
+
+    if (equals("leonardo", "leonardo")) {
+        std::cout << "yes";
+    } else {
+        std::cout << "no";
+    }
 
 }
