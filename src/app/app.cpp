@@ -18,7 +18,7 @@ void App::run() {
     std::unique_ptr<std::string> author = std::make_unique<std::string>();
     std::unique_ptr<std::string> license = std::make_unique<std::string>();
 
-    std::cout << "↳ 〔 ✾ Name ✾ 〕: ";
+    std::cout << "↳ 〔 ✾ Names ✾ 〕: ";
     std::getline(std::cin, *projectName); 
 
     std::cout << "↳ 〔 ✍  Description 〕: ";
