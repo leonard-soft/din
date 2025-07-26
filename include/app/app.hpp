@@ -3,7 +3,10 @@
 
 class App {
 public:
-    void run();    
+    void run(int argc, char* argv[]);    
+    void createProject();
+    void showVersion();
+    void commandNotFound();
 };
 
 #endif //APP_HPP
