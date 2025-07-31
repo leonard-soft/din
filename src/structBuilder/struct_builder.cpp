@@ -45,9 +45,9 @@ void StructBuilder::create_json_file()
     if (json_file.is_open())
     {
         json_file << "{\n";
-        json_file << "  \"name\": \"" << project_name << "\"\n";
-        json_file << "  \"description\": \"" << description << "\"\n";
-        json_file << "  \"author\": \"" << author << "\"\n";
+        json_file << "  \"name\": \"" << project_name << "\",\n";
+        json_file << "  \"description\": \"" << description << "\",\n";
+        json_file << "  \"author\": \"" << author << "\",\n";
         json_file << "  \"license\": \"" << license << "\"\n";
         json_file << "}";
         json_file.close();
