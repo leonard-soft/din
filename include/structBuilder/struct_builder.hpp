@@ -2,6 +2,10 @@
 #define STRUCT_BUILDER_HPP
 
 #include <string>
+#include <iostream>
+#include <filesystem>
+#include <fstream>
+
 
 class StructBuilder {
 private:
@@ -13,6 +17,9 @@ private:
 public:
 
     StructBuilder();
+    void readProperties();
+    void createMainDirectory();
+
     void createStruct();
 
     std::string getProjectName();

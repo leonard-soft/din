@@ -6,4 +6,4 @@ add_executable(din
 src/main.cpp
 src/app/app.cpp
 src/equals/equals.cpp
-src/structBuilder/structBuilder.cpp)
+src/structBuilder/struct_builder.cpp)

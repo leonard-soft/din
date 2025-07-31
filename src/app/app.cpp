@@ -4,7 +4,6 @@
 // libraries header
 #include <iostream>
 #include <string>
-#include <memory>
 #include "../../include/equals/equals.hpp"
 #include "../../include/structBuilder/struct_builder.hpp"
 
@@ -26,13 +25,13 @@ void App::run(int argc, char* argv[])
     {
         if (equals("start", argv[1])) 
         {
-            createProject();
+            create_project();
         } else if (equals("-v", argv[1])) 
         {
-            showVersion();
+            show_version();
         } else 
         {
-            commandNotFound();
+            show_command_not_found();
         }
     } else 
     {
@@ -44,27 +43,19 @@ void App::run(int argc, char* argv[])
 /**
  *  @brief createProject
  */
-void App::createProject() 
+void App::create_project() 
 {
-    std::unique_ptr<StructBuilder> stb = std::make_unique<StructBuilder>();
+    StructBuilder *stb = new StructBuilder();
+    stb->readProperties();
+    stb->createStruct();
 
-    std::cout << "↳ 〔 ✾ Names ✾ 〕: ";
-    std::getline(std::cin, stb->getProjectName()); 
-
-    std::cout << "↳ 〔 ✍  Description 〕: ";
-    std::getline(std::cin, *projectDescription);
-
-    std::cout << "↳ 〔 ♡ Author ♡ 〕: ";
-    std::getline(std::cin, *author);
-
-    std::cout << "↳ 〔 ❖ License ❖ 〕: ";
-    std::getline(std::cin, *license);
+    delete stb;
 }
 
 /**
  * @brief show Version method
  */
-void App::showVersion() 
+void App::show_version() 
 {
     std::cout << "╔╦══• •✠•❀•✠ • •══╦╗" << std::endl;
     std::cout << "  VERSION : 1.0.0" << std::endl;
@@ -74,7 +65,7 @@ void App::showVersion()
 /**
  * @brief Command not foud method
  */
-void App::commandNotFound() 
+void App::show_command_not_found() 
 {
     std::cout << "❍━━━━━━❑❒❖❑❒ ━━━━━━❍" << std::endl;
     std::cout << "  Command Not Found" << std::endl;
