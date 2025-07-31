@@ -33,7 +33,7 @@ void App::run(int argc, char* argv[])
         }
     } else 
     {
-        std::cout << "write a command";
+        show_write_command();
     }
 }
 
@@ -65,4 +65,14 @@ void App::show_command_not_found()
     std::cout << "❍━━━━━━❑❒❖❑❒ ━━━━━━❍" << std::endl;
     std::cout << "  Command Not Found" << std::endl;
     std::cout << "❍━━━━━━❑❒❖❑❒ ━━━━━━❍" << std::endl;
+}
+
+/**
+ * @brief show write a command
+ */
+void App::show_write_command()
+{
+    std::cout << "━━✧♡✧━━━✧♡✧━━━✧♡✧━━" << std::endl;
+    std::cout << "  write a command" << std::endl;
+    std::cout << "━━✧♡✧━━━✧♡✧━━━✧♡✧━━" << std::endl;
 }

@@ -2,6 +2,9 @@
 
 StructBuilder::StructBuilder() = default;
 
+/**
+ * @brief read_properties
+ */
 void StructBuilder::read_properties()
 {
     std::cout << "↳ 〔 ✾ Names ✾ 〕: ";
@@ -15,21 +18,25 @@ void StructBuilder::read_properties()
 
     std::cout << "↳ 〔 ❖ License ❖ 〕: ";
     std::getline(std::cin, this->license);
+
+    std::cout << "\n";
 }
 
+/**
+ * @brief create main directory
+ */
 void StructBuilder::create_main_directory()
 {
     fs::path projectDir = fs::current_path() / this->project_name;
-
     try 
     {
         if (fs::create_directory(projectDir))
         {
-            std::cout << "✠ Directory " << projectDir << " created ✠";
+            std::cout << "✠ Directory " << projectDir << " created ✠" << std::endl;
         }
         else 
         {
-            std::cout << "✠ Directory " << projectDir << " already exists ✠";
+            std::cout << "✠ Directory " << projectDir << " already exists ✠" << std::endl;
         }
     } 
     catch (const fs::filesystem_error& e)
@@ -38,6 +45,32 @@ void StructBuilder::create_main_directory()
     }
 }
 
+/**
+ * @brief create modules dir
+ */
+void StructBuilder::create_modules_dir()
+{
+    fs::path modules_path = fs::current_path() / this->project_name / "modules";
+    try 
+    {
+        if (fs::create_directory(modules_path))
+        {
+            std::cout << "✠ Directory " << modules_path << " created ✠" << std::endl;
+        }
+        else
+        {
+            std::cout << "✠ Directory " << modules_path << " already exists ✠" << std::endl;
+        }
+    }
+    catch (const fs::filesystem_error& e)
+    {
+        std::cerr << "Filesystem Error: "  << e.what();
+    }
+}
+
+/**
+ * @brief create json file
+ */
 void StructBuilder::create_json_file()
 {
     fs::path dinFile = fs::current_path() / this->project_name / "din.json";
@@ -61,6 +94,7 @@ void StructBuilder::create_json_file()
 void StructBuilder::create_struct() 
 {
     create_main_directory();
+    create_modules_dir();
     create_json_file();
 }
 

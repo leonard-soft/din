@@ -7,6 +7,7 @@ public:
     void create_project();
     void show_version();
     void show_command_not_found();
+    void show_write_command();
 };
 
 #endif //APP_HPP
