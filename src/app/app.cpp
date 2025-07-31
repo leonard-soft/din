@@ -45,7 +45,6 @@ void App::create_project()
     StructBuilder stb;
     stb.read_properties();
     stb.create_struct();
-    stb.create_json_file();
 }
 
 /**
