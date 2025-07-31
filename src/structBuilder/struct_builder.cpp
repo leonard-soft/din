@@ -2,7 +2,7 @@
 
 StructBuilder::StructBuilder() = default;
 
-void StructBuilder::readProperties()
+void StructBuilder::read_properties()
 {
     std::cout << "↳ 〔 ✾ Names ✾ 〕: ";
     std::getline(std::cin, this->project_name); 
@@ -19,7 +19,6 @@ void StructBuilder::readProperties()
 
 void StructBuilder::create_main_directory()
 {
-    namespace fs = std::filesystem;
     fs::path projectDir = fs::current_path() / this->project_name;
 
     try 
@@ -39,31 +38,48 @@ void StructBuilder::create_main_directory()
     }
 }
 
+void StructBuilder::create_json_file()
+{
+    fs::path dinFile = fs::current_path() / this->project_name / "din.json";
+    std::ofstream json_file(dinFile.c_str());
+    if (json_file.is_open())
+    {
+        json_file << "{\n";
+        json_file << "  \"name\": \"" << project_name << "\"\n";
+        json_file << "  \"description\": \"" << description << "\"\n";
+        json_file << "  \"author\": \"" << author << "\"\n";
+        json_file << "  \"license\": \"" << license << "\"\n";
+        json_file << "}";
+        json_file.close();
+    }
+    else 
+    {
+        std::cerr << "didn't write" << std::endl;
+    }
+}
+
 void StructBuilder::create_struct() 
 {
     create_main_directory();
-
-    //fs::path dinFile = projectDir / "din.json"; 
-    // std::ofstream jsonFile(dinFile.c_str());
-
+    create_json_file();
 }
 
-std::string StructBuilder::getProjectName() 
+std::string StructBuilder::get_project_name() 
 {
     return this->project_name;
 }
 
-std::string StructBuilder::getDescription()
+std::string StructBuilder::get_description()
 {
     return this->description;
 }
 
-std::string StructBuilder::getAuthor()
+std::string StructBuilder::get_author()
 {
     return this->author;
 }
 
-std::string StructBuilder::getLicense()
+std::string StructBuilder::get_license()
 {
     return this->license;
 }

@@ -6,6 +6,8 @@
 #include <filesystem>
 #include <fstream>
 
+namespace fs = std::filesystem;
+
 
 class StructBuilder {
 private:
@@ -17,15 +19,17 @@ private:
 public:
 
     StructBuilder();
+
     void read_properties();
     void create_main_directory();
+    void create_json_file();
 
     void create_struct();
 
-    std::string getProjectName();
-    std::string getDescription();
-    std::string getAuthor();
-    std::string getLicense();
+    std::string get_project_name();
+    std::string get_description();
+    std::string get_author();
+    std::string get_license();
 
 };
 

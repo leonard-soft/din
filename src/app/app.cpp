@@ -42,11 +42,10 @@ void App::run(int argc, char* argv[])
  */
 void App::create_project() 
 {
-    StructBuilder *stb = new StructBuilder();
-    stb->read_properties();
-    stb->create_struct();
-
-    delete stb;
+    StructBuilder stb;
+    stb.read_properties();
+    stb.create_struct();
+    stb.create_json_file();
 }
 
 /**
