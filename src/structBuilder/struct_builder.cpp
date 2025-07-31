@@ -91,11 +91,34 @@ void StructBuilder::create_json_file()
     }
 }
 
+/**
+ * @brief create cpp file
+ */
+void StructBuilder::create_cpp_file()
+{
+    fs::path cpp_file = fs::current_path() / this->project_name / "main.cpp";
+    std::ofstream main_file(cpp_file.c_str());
+    if(main_file.is_open())
+    {
+        main_file << "#include <iostream> \n";
+        main_file << "\n";
+        main_file << "int main() \n";
+        main_file << "{ \n";
+        main_file << "    std::cout << \" you are using c++ and din \" << std::endl; \n";
+        main_file << "    return 0; \n";
+        main_file << "}";
+    }
+}
+
+/**
+ * @brief create struct
+ */
 void StructBuilder::create_struct() 
 {
     create_main_directory();
     create_modules_dir();
     create_json_file();
+    create_cpp_file();
 }
 
 std::string StructBuilder::get_project_name() 
