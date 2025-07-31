@@ -6,6 +6,7 @@
 #include <string>
 #include <memory>
 #include "../../include/equals/equals.hpp"
+#include "../../include/structBuilder/struct_builder.hpp"
 
 // namespaces
 using namespace din::equals;
@@ -18,17 +19,23 @@ using namespace din::equals;
  * also this function contains the logic code to add dependencies into the 
  * projects.
  */
-void App::run(int argc, char* argv[]) {
+void App::run(int argc, char* argv[]) 
+{
 
-    if (argc >= 2) {
-        if (equals("start", argv[1])) {
+    if (argc >= 2) 
+    {
+        if (equals("start", argv[1])) 
+        {
             createProject();
-        } else if (equals("-v", argv[1])) {
+        } else if (equals("-v", argv[1])) 
+        {
             showVersion();
-        } else {
+        } else 
+        {
             commandNotFound();
         }
-    } else {
+    } else 
+    {
         std::cout << "write a command";
     }
 
@@ -37,14 +44,12 @@ void App::run(int argc, char* argv[]) {
 /**
  *  @brief createProject
  */
-void App::createProject() {
-    std::unique_ptr<std::string> projectName = std::make_unique<std::string>();
-    std::unique_ptr<std::string> projectDescription = std::make_unique<std::string>();
-    std::unique_ptr<std::string> author = std::make_unique<std::string>();
-    std::unique_ptr<std::string> license = std::make_unique<std::string>();
+void App::createProject() 
+{
+    std::unique_ptr<StructBuilder> stb = std::make_unique<StructBuilder>();
 
     std::cout << "↳ 〔 ✾ Names ✾ 〕: ";
-    std::getline(std::cin, *projectName); 
+    std::getline(std::cin, stb->getProjectName()); 
 
     std::cout << "↳ 〔 ✍  Description 〕: ";
     std::getline(std::cin, *projectDescription);
@@ -59,7 +64,8 @@ void App::createProject() {
 /**
  * @brief show Version method
  */
-void App::showVersion() {
+void App::showVersion() 
+{
     std::cout << "╔╦══• •✠•❀•✠ • •══╦╗" << std::endl;
     std::cout << "  VERSION : 1.0.0" << std::endl;
     std::cout << "╚╩══• •✠•❀•✠ • •══╩╝" << std::endl;
@@ -68,7 +74,8 @@ void App::showVersion() {
 /**
  * @brief Command not foud method
  */
-void App::commandNotFound() {
+void App::commandNotFound() 
+{
     std::cout << "❍━━━━━━❑❒❖❑❒ ━━━━━━❍" << std::endl;
     std::cout << "  Command Not Found" << std::endl;
     std::cout << "❍━━━━━━❑❒❖❑❒ ━━━━━━❍" << std::endl;

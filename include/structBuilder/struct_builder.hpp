@@ -12,7 +12,13 @@ private:
 
 public:
 
+    StructBuilder();
     void createStruct();
+
+    std::string getProjectName();
+    std::string getDescription();
+    std::string getAuthor();
+    std::string getLicense();
 
 };
 

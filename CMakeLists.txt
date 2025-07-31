@@ -5,4 +5,5 @@ project(din)
 add_executable(din 
 src/main.cpp
 src/app/app.cpp
-src/equals/equals.cpp)
+src/equals/equals.cpp
+src/structBuilder/structBuilder.cpp)
