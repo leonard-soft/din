@@ -5,7 +5,7 @@ StructBuilder::StructBuilder() = default;
 void StructBuilder::readProperties()
 {
     std::cout << "↳ 〔 ✾ Names ✾ 〕: ";
-    std::getline(std::cin, this->projectName); 
+    std::getline(std::cin, this->project_name); 
 
     std::cout << "↳ 〔 ✍  Description 〕: ";
     std::getline(std::cin, this->description);
@@ -17,10 +17,10 @@ void StructBuilder::readProperties()
     std::getline(std::cin, this->license);
 }
 
-void StructBuilder::createMainDirectory()
+void StructBuilder::create_main_directory()
 {
     namespace fs = std::filesystem;
-    fs::path projectDir = fs::current_path() / this->projectName;
+    fs::path projectDir = fs::current_path() / this->project_name;
 
     try 
     {
@@ -39,9 +39,9 @@ void StructBuilder::createMainDirectory()
     }
 }
 
-void StructBuilder::createStruct() 
+void StructBuilder::create_struct() 
 {
-    createMainDirectory();
+    create_main_directory();
 
     //fs::path dinFile = projectDir / "din.json"; 
     // std::ofstream jsonFile(dinFile.c_str());
@@ -50,7 +50,7 @@ void StructBuilder::createStruct()
 
 std::string StructBuilder::getProjectName() 
 {
-    return this->projectName;
+    return this->project_name;
 }
 
 std::string StructBuilder::getDescription()

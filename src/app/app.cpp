@@ -10,7 +10,6 @@
 // namespaces
 using namespace din::equals;
 
-
 /**
  * @brief App::run method
  * 
@@ -20,7 +19,6 @@ using namespace din::equals;
  */
 void App::run(int argc, char* argv[]) 
 {
-
     if (argc >= 2) 
     {
         if (equals("start", argv[1])) 
@@ -37,7 +35,6 @@ void App::run(int argc, char* argv[])
     {
         std::cout << "write a command";
     }
-
 }
 
 /**
@@ -46,8 +43,8 @@ void App::run(int argc, char* argv[])
 void App::create_project() 
 {
     StructBuilder *stb = new StructBuilder();
-    stb->readProperties();
-    stb->createStruct();
+    stb->read_properties();
+    stb->create_struct();
 
     delete stb;
 }

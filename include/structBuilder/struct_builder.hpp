@@ -9,7 +9,7 @@
 
 class StructBuilder {
 private:
-    std::string projectName;
+    std::string project_name;
     std::string description;
     std::string author;
     std::string license;
@@ -17,10 +17,10 @@ private:
 public:
 
     StructBuilder();
-    void readProperties();
-    void createMainDirectory();
+    void read_properties();
+    void create_main_directory();
 
-    void createStruct();
+    void create_struct();
 
     std::string getProjectName();
     std::string getDescription();
