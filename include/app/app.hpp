@@ -8,6 +8,7 @@ public:
     void show_version();
     void show_command_not_found();
     void show_write_command();
+    void show_help_info();
 };
 
 #endif //APP_HPP

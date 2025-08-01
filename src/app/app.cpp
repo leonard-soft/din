@@ -5,7 +5,7 @@
 #include <iostream>
 #include <string>
 #include "../../include/equals/equals.hpp"
-#include "../../include/structBuilder/struct_builder.hpp"
+#include "../../include/struct_builder/struct_builder.hpp"
 
 // namespaces
 using namespace din::equals;
@@ -27,7 +27,10 @@ void App::run(int argc, char* argv[])
         } else if (equals("-v", argv[1])) 
         {
             show_version();
-        } else 
+        } else if (equals("-h", argv[1]))
+        {
+            show_help_info();
+        } else
         {
             show_command_not_found();
         }
@@ -75,4 +78,15 @@ void App::show_write_command()
     std::cout << "━━✧♡✧━━━✧♡✧━━━✧♡✧━━" << std::endl;
     std::cout << "  write a command" << std::endl;
     std::cout << "━━✧♡✧━━━✧♡✧━━━✧♡✧━━" << std::endl;
+}
+
+/*
+* @brief show help info
+*/
+void App::show_help_info()
+{
+    std::cout << "〔 Din Commands 〕" << std::endl;
+    std::cout << "\n ↳ din start        create a new din project." << std::endl;
+    std::cout << " ↳ din -v           show the din version." << std::endl;
+    std::cout << " ↳ din -h           show the din commands." << std::endl;
 }

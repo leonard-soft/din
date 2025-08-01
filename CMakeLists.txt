@@ -6,7 +6,7 @@ add_executable(din
 src/main.cpp
 src/app/app.cpp
 src/equals/equals.cpp
-src/structBuilder/struct_builder.cpp
+src/struct_builder/struct_builder.cpp
 src/directory_creator/directory_creator.cpp)
 
 install(TARGETS din DESTINATION bin)

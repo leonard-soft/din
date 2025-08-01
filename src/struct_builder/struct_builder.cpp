@@ -1,4 +1,4 @@
-#include "../../include/structBuilder/struct_builder.hpp"
+#include "../../include/struct_builder/struct_builder.hpp"
 
 StructBuilder::StructBuilder() = default;
 
@@ -49,8 +49,8 @@ void StructBuilder::create_modules_dir()
  */
 void StructBuilder::create_json_file()
 {
-    fs::path dinFile = fs::current_path() / this->project_name / "din.json";
-    std::ofstream json_file(dinFile.c_str());
+    fs::path din_file = fs::current_path() / this->project_name / "din.json";
+    std::ofstream json_file(din_file.c_str());
     if (json_file.is_open())
     {
         json_file << "{\n";
@@ -65,6 +65,7 @@ void StructBuilder::create_json_file()
     {
         std::cerr << "didn't write" << std::endl;
     }
+    std::cout << "✠ File " << din_file.c_str() << " created. ✠" << std::endl;
 }
 
 /**
@@ -84,6 +85,11 @@ void StructBuilder::create_cpp_file()
         main_file << "    return 0; \n";
         main_file << "}";
     }
+    else 
+    {
+        std::cerr << "didn't write" << std::endl;
+    }
+    std::cout << "✠ File " << cpp_file.c_str() << " created. ✠" << std::endl;
 }
 
 /**
