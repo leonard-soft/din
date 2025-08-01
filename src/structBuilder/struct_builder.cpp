@@ -27,22 +27,10 @@ void StructBuilder::read_properties()
  */
 void StructBuilder::create_main_directory()
 {
-    fs::path projectDir = fs::current_path() / this->project_name;
-    try 
-    {
-        if (fs::create_directory(projectDir))
-        {
-            std::cout << "✠ Directory " << projectDir << " created ✠" << std::endl;
-        }
-        else 
-        {
-            std::cout << "✠ Directory " << projectDir << " already exists ✠" << std::endl;
-        }
-    } 
-    catch (const fs::filesystem_error& e)
-    {
-        std::cerr << "Filesystem Error: "  << e.what();
-    }
+    DirectoryCreator *dc = new DirectoryCreator();
+    fs::path project_dir = fs::current_path() / this->project_name;
+    dc->create_directory(project_dir);
+    delete dc;
 }
 
 /**
@@ -50,22 +38,10 @@ void StructBuilder::create_main_directory()
  */
 void StructBuilder::create_modules_dir()
 {
+    DirectoryCreator *dc = new DirectoryCreator();
     fs::path modules_path = fs::current_path() / this->project_name / "modules";
-    try 
-    {
-        if (fs::create_directory(modules_path))
-        {
-            std::cout << "✠ Directory " << modules_path << " created ✠" << std::endl;
-        }
-        else
-        {
-            std::cout << "✠ Directory " << modules_path << " already exists ✠" << std::endl;
-        }
-    }
-    catch (const fs::filesystem_error& e)
-    {
-        std::cerr << "Filesystem Error: "  << e.what();
-    }
+    dc->create_directory(modules_path);
+    delete dc;
 }
 
 /**
