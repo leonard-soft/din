@@ -87,6 +87,7 @@ void App::show_help_info()
 {
     std::cout << "〔 Din Commands 〕" << std::endl;
     std::cout << "\n ↳ din start           create a new din project." << std::endl;
+    std::cout << " ↳ din run             run your project." << std::endl;
     std::cout << " ↳ din new class       create a new class into the project." << std::endl;
     std::cout << " ↳ din new lib         create a structure to new library." << std::endl;
     std::cout << " ↳ din upload          upload your library to center repository" << std::endl;
