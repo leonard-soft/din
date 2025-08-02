@@ -86,7 +86,13 @@ void App::show_write_command()
 void App::show_help_info()
 {
     std::cout << "〔 Din Commands 〕" << std::endl;
-    std::cout << "\n ↳ din start        create a new din project." << std::endl;
-    std::cout << " ↳ din -v           show the din version." << std::endl;
-    std::cout << " ↳ din -h           show the din commands." << std::endl;
+    std::cout << "\n ↳ din start           create a new din project." << std::endl;
+    std::cout << " ↳ din new class       create a new class into the project." << std::endl;
+    std::cout << " ↳ din new lib         create a structure to new library." << std::endl;
+    std::cout << " ↳ din upload          upload your library to center repository" << std::endl;
+    std::cout << " ↳ din add <lib>       install <lib> as dependency to your project." << std::endl;
+    std::cout << " ↳ din build           compile and generate a binary." << std::endl;
+    std::cout << " ↳ din test st         generate a unit testing structuro to your project" << std::endl;
+    std::cout << " ↳ din -v              show the din version." << std::endl;
+    std::cout << " ↳ din -h              show the din commands." << std::endl;
 }
