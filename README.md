@@ -30,7 +30,7 @@ din start
 tree myapp/
 
 myapp/
-├── CMakeList.txt
+├── CMakeLists.txt
 ├── din.json
 ├── main.cpp
 └── modules  # this is a directory to futures libs with `din add`
@@ -39,11 +39,35 @@ myapp/
 
 ###  ↳ `din -v` 
 
+this command show you the din version. 
+
 ```bash
 din -v
 ╔╦══• •✠•❀•✠ • •══╦╗
   VERSION : 1.0.0
 ╚╩══• •✠•❀•✠ • •══╩╝
+```
+
+----
+
+###  ↳ `din -h` 
+
+this command show you the list of commands that we are working for improve your user experience
+
+```bash
+din -h
+〔 Din Commands 〕
+
+ ↳ din start           create a new din project.
+ ↳ din run             run your project.
+ ↳ din new class       create a new class into the project.
+ ↳ din new lib         create a structure to new library.
+ ↳ din upload          upload your library to center repository
+ ↳ din add <lib>       install <lib> as dependency to your project.
+ ↳ din build           compile and generate a binary.
+ ↳ din test st         generate a unit testing structuro to your project
+ ↳ din -v              show the din version.
+ ↳ din -h              show the din commands.
 ```
 
 

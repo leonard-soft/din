@@ -97,7 +97,7 @@ void StructBuilder::create_cpp_file()
  */
 void StructBuilder::create_cmake_file()
 {
-    fs::path cmake_file = fs::current_path() / this->project_name / "CMakeList.txt";
+    fs::path cmake_file = fs::current_path() / this->project_name / "CMakeLists.txt";
     std::ofstream cmake(cmake_file.c_str());
     if (cmake.is_open())
     {
