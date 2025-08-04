@@ -26,6 +26,7 @@ public:
     void create_modules_dir();
     void create_json_file();
     void create_cpp_file();
+    void create_cmake_file();
 
     void create_struct();
 

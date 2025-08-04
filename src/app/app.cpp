@@ -25,7 +25,7 @@ void App::run(int argc, char* argv[])
     {
         std::unordered_map<std::string, std::function<void()>> commands = 
         {
-            {"start", [this]() {create_project(); }},
+            {"start", [this]() {create_project();}},
             {"-v",    [this]() {show_version();}},
             {"-h",    [this]() {show_help_info();}}
         };

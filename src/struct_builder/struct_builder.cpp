@@ -93,6 +93,26 @@ void StructBuilder::create_cpp_file()
 }
 
 /**
+ * @brief create cmake file
+ */
+void StructBuilder::create_cmake_file()
+{
+    fs::path cmake_file = fs::current_path() / this->project_name / "CMakeList.txt";
+    std::ofstream cmake(cmake_file.c_str());
+    if (cmake.is_open())
+    {
+        cmake << "cmake_minimum_required(VERSION 3.10)";
+        cmake << "\n";
+        cmake << "project( " << this->project_name << ")";
+        cmake << "\n";
+        cmake << "add_executable(" << this->project_name << "main.cpp)";  
+    } else {
+        std::cerr << "didn't write" << std::endl;
+    }
+    std::cout << "✠ File " << cmake_file.c_str() << " created. ✠" << std::endl;
+}
+
+/**
  * @brief create struct
  */
 void StructBuilder::create_struct() 
@@ -101,6 +121,7 @@ void StructBuilder::create_struct()
     create_modules_dir();
     create_json_file();
     create_cpp_file();
+    create_cmake_file();
 }
 
 std::string StructBuilder::get_project_name() 
