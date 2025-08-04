@@ -4,6 +4,8 @@
 // libraries header
 #include <iostream>
 #include <string>
+#include <unordered_map>
+#include <functional>
 #include "../../include/equals/equals.hpp"
 #include "../../include/struct_builder/struct_builder.hpp"
 
@@ -21,16 +23,21 @@ void App::run(int argc, char* argv[])
 {
     if (argc >= 2) 
     {
-        if (equals("start", argv[1])) 
+        std::unordered_map<std::string, std::function<void()>> commands = 
         {
-            create_project();
-        } else if (equals("-v", argv[1])) 
+            {"start", [this]() {create_project(); }},
+            {"-v",    [this]() {show_version();}},
+            {"-h",    [this]() {show_help_info();}}
+        };
+
+        std::string command = argv[1];
+        auto it = commands.find(command);
+
+        if (it != commands.end())
         {
-            show_version();
-        } else if (equals("-h", argv[1]))
-        {
-            show_help_info();
-        } else
+            it->second();
+        }
+        else 
         {
             show_command_not_found();
         }
