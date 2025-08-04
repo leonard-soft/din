@@ -21,7 +21,7 @@ din start
 ✠ Directory "/home/$user/Desktop/din/build/myapp/modules" created ✠
 ✠ File /home/$user/Desktop/din/build/myapp/din.json created. ✠
 ✠ File /home/$user/Desktop/din/build/myapp/main.cpp created. ✠
-✠ File /home/$user/Desktop/din/build/myapp/CMakeList.txt created. ✠
+✠ File /home/$user/Desktop/din/build/myapp/CMakeLists.txt created. ✠
 ```
 
 ##### this is the structure generated for din ⚡ 
@@ -52,7 +52,7 @@ din -v
 
 ###  ↳ `din -h` 
 
-this command show you the list of commands that we are working for improve your user experience
+this command show you the list of commands that we are working for improve your user experience.
 
 ```bash
 din -h
@@ -70,9 +70,10 @@ din -h
  ↳ din -h              show the din commands.
 ```
 
+----
 
 ### official maintainers
 
-- linux -> @leonard-soft
-- windows -> @sac1802
-- mac -> 'coming soon'
+- 🐧 Linux: [@leonard-soft](https://github.com/leonard-soft)
+- 🪟 Windows: [@sac1802](https://github.com/sac1802)
+- 🍎 macOS: *coming soon*
