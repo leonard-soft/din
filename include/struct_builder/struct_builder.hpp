@@ -3,12 +3,17 @@
 
 #include <string>
 #include <iostream>
-#include <filesystem>
 #include <fstream>
-#include "../../include/directory_creator/directory_creator.hpp"
 
-namespace fs = std::filesystem;
-
+#if defined(__linux__)
+    #include <filesystem>
+    #include "../../include/directory_creator/directory_creator.hpp"
+    namespace fs = std::filesystem;  
+#elif defined(_WIN32)
+    #include <experimental/filesystem>
+    #include "..\..\include\directory_creator\directory_creator.hpp"
+    namespace fs = std::experimental::filesystem;
+#endif
 
 class StructBuilder {
 private:

@@ -1,4 +1,9 @@
-#include "../../include/directory_creator/directory_creator.hpp"
+#if defined(__linux__)
+    #include "../../include/directory_creator/directory_creator.hpp"
+#elif defined(_WIN32)
+    #include "..\..\include\directory_creator\directory_creator.hpp"
+#endif
+
 
 /**
  * @brief create directory
