@@ -33,7 +33,17 @@ myapp/
 ├── CMakeList.txt
 ├── din.json
 ├── main.cpp
-└── modules
+└── modules  # this is a directory to futures libs with `din add`
+```
+---
+
+###  ↳ `din -v` 
+
+```bash
+din -v
+╔╦══• •✠•❀•✠ • •══╦╗
+  VERSION : 1.0.0
+╚╩══• •✠•❀•✠ • •══╩╝
 ```
 
 
