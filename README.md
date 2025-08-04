@@ -8,7 +8,7 @@ din is a ⚡ blazing-fast C++ project manager and build tool designed for indie 
 
 ### ↳ `din start` 
 
-this command create a new structure to new project
+This command initializes a new C++ project structure with `CMake`, `din.json`, and a ready-to-edit `main.cpp`
 
 ```bash
 din start
