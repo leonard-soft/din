@@ -21,7 +21,21 @@ din start
 ✠ Directory "/home/$user/Desktop/din/build/myapp/modules" created ✠
 ✠ File /home/$user/Desktop/din/build/myapp/din.json created. ✠
 ✠ File /home/$user/Desktop/din/build/myapp/main.cpp created. ✠
+✠ File /home/$user/Desktop/din/build/myapp/CMakeList.txt created. ✠
 ```
+
+##### this is the structure generated for din ⚡ 
+
+```bash
+tree myapp/
+
+myapp/
+├── CMakeList.txt
+├── din.json
+├── main.cpp
+└── modules
+```
+
 
 ### official maintainers
 

@@ -7,7 +7,7 @@ StructBuilder::StructBuilder() = default;
  */
 void StructBuilder::read_properties()
 {
-    std::cout << "↳ 〔 ✾ Names ✾ 〕: ";
+    std::cout << "↳ 〔 ✾ Name ✾ 〕: ";
     std::getline(std::cin, this->project_name); 
 
     std::cout << "↳ 〔 ✍  Description 〕: ";
